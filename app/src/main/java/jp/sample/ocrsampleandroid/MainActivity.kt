@@ -50,14 +50,14 @@ class MainActivity : AppCompatActivity() {
                                 // 画像の横、縦サイズを取得
                                 contentResolver.openInputStream(it).use {
                                     it?.let {
-                                        var degrees = 0f
                                         val exifInterface = ExifInterface(it)
                                         val orientation = exifInterface.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_UNDEFINED)
-                                        when (orientation) {
-                                            1 -> {degrees = 0f}
-                                            3-> {degrees = 180f}
-                                            6 -> {degrees = 90f}
-                                            8 -> {degrees = 270f}
+                                        val degrees = when (orientation) {
+                                            1 -> { 0f }
+                                            3-> { 180f }
+                                            6 -> { 90f }
+                                            8 -> { 270f }
+                                            else -> { 0f }
                                         }
                                         val matrix = Matrix()
                                         val imageWidth = bitmapOrigin?.getWidth() ?: 0
