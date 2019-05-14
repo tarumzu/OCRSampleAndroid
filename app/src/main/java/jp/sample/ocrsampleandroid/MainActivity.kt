@@ -7,6 +7,7 @@ import android.graphics.Bitmap
 import android.content.Intent
 import android.app.Activity
 import android.graphics.Matrix
+import android.widget.RadioButton
 import androidx.exifinterface.media.ExifInterface
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.IOException
@@ -42,12 +43,10 @@ class MainActivity : AppCompatActivity() {
                 val uri = data.data
                 try {
                     uri?.let {
-
                         contentResolver.openFileDescriptor(it, "r").use {parcelFileDescriptorNullable ->
                             parcelFileDescriptorNullable?.let {parcelFileDescriptor ->
                                 val fileDescriptor = parcelFileDescriptor.fileDescriptor
                                 bitmapOrigin = BitmapFactory.decodeFileDescriptor(fileDescriptor)
-                                // 画像の横、縦サイズを取得
                                 contentResolver.openInputStream(it).use {
                                     it?.let {
                                         val exifInterface = ExifInterface(it)
@@ -60,6 +59,7 @@ class MainActivity : AppCompatActivity() {
                                             else -> { 0f }
                                         }
                                         val matrix = Matrix()
+
                                         val imageWidth = bitmapOrigin?.getWidth() ?: 0
                                         val imageHeight = bitmapOrigin?.getHeight() ?: 0
                                         matrix.setRotate(degrees, imageWidth.toFloat() / 2, imageHeight.toFloat() / 2)
@@ -76,7 +76,9 @@ class MainActivity : AppCompatActivity() {
 
                 bitmap?.let {
                     image.setImageBitmap(it)
-                    ocr.text = ocrUtil.getString(applicationContext, it, OCRUtil.Companion.LangType.getLangType("").str)
+                    val langId = radio_group.getCheckedRadioButtonId()
+                    val langText = findViewById<RadioButton>(langId).text.toString()
+                    ocr.text = ocrUtil.getString(applicationContext, it, OCRUtil.Companion.LangType.getLangType(langText).str)
                 } ?: run {
                     ocr.text = "bitmap is null"
                 }
