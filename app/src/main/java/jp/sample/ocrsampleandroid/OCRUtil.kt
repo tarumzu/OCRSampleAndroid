@@ -11,7 +11,7 @@ import java.io.IOException
 class OCRUtil(context: Context) {
 
     private val TESS_DATA_DIR = "tessdata" + File.separator
-    private val TESS_TRAINED_DATA = arrayListOf("eng.traineddata", "jpn.traineddata")
+    private val TESS_TRAINED_DATA = arrayListOf("eng.traineddata", "jpn.traineddata", "jpnnew.traineddata")
 
     init {
         checkTrainedData(context)
@@ -27,9 +27,9 @@ class OCRUtil(context: Context) {
             TESS_TRAINED_DATA.forEach {
                 val dataFilePath = dataPath + it
                 val datafile = File(dataFilePath)
-                if (!datafile.exists()) {
+                //if (!datafile.exists()) {
                     copyFiles(context)
-                }
+                //}
             }
         }
     }
@@ -74,6 +74,7 @@ class OCRUtil(context: Context) {
     companion object {
         enum class LangType constructor(val str: String) {
             jpn("jpn"),
+            jpnnew("jpnnew"),
             eng("eng"),
             UNKNOWN("eng");
 

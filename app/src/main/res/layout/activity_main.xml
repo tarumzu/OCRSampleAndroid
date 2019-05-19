@@ -39,6 +39,12 @@
                      android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
             />
+            <RadioButton
+                    android:text="jpnnew"
+                    android:id="@+id/radio_button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+            />
         </RadioGroup>
 
         <Button

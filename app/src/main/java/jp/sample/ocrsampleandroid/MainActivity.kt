@@ -70,17 +70,17 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
 
+
+                    bitmap?.let {
+                        image.setImageBitmap(it)
+                        val langId = radio_group.getCheckedRadioButtonId()
+                        val langText = findViewById<RadioButton>(langId).text.toString()
+                        ocr.text = ocrUtil.getString(applicationContext, it, OCRUtil.Companion.LangType.getLangType(langText).str)
+                    } ?: run {
+                        ocr.text = "bitmap is null"
+                    }
                 } catch (e: IOException) {
                     e.printStackTrace()
-                }
-
-                bitmap?.let {
-                    image.setImageBitmap(it)
-                    val langId = radio_group.getCheckedRadioButtonId()
-                    val langText = findViewById<RadioButton>(langId).text.toString()
-                    ocr.text = ocrUtil.getString(applicationContext, it, OCRUtil.Companion.LangType.getLangType(langText).str)
-                } ?: run {
-                    ocr.text = "bitmap is null"
                 }
             } else {
                 ocr.text = "system error"
