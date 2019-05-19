@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  tesseract:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/usr/src/app
