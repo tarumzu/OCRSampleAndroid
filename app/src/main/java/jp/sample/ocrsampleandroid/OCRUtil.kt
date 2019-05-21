@@ -27,9 +27,9 @@ class OCRUtil(context: Context) {
             TESS_TRAINED_DATA.forEach {
                 val dataFilePath = dataPath + it
                 val datafile = File(dataFilePath)
-                //if (!datafile.exists()) {
+                if (!datafile.exists()) {
                     copyFiles(context)
-                //}
+                }
             }
         }
     }
