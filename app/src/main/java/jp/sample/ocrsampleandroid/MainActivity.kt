@@ -1,6 +1,5 @@
 package jp.sample.ocrsampleandroid
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.graphics.BitmapFactory
 import android.graphics.Bitmap
@@ -8,6 +7,7 @@ import android.content.Intent
 import android.app.Activity
 import android.graphics.Matrix
 import android.widget.RadioButton
+import androidx.appcompat.app.AppCompatActivity
 import androidx.exifinterface.media.ExifInterface
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.IOException
