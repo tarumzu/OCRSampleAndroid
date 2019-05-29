@@ -12,7 +12,6 @@ import androidx.exifinterface.media.ExifInterface
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.IOException
 
-
 class MainActivity : AppCompatActivity() {
 
     private val REQUEST = 0
@@ -28,7 +27,6 @@ class MainActivity : AppCompatActivity() {
 
             intent.type = "image/*"
             startActivityForResult(intent, REQUEST)
-
         }
     }
 
@@ -43,8 +41,8 @@ class MainActivity : AppCompatActivity() {
                 val uri = data.data
                 try {
                     uri?.let {
-                        contentResolver.openFileDescriptor(it, "r").use {parcelFileDescriptorNullable ->
-                            parcelFileDescriptorNullable?.let {parcelFileDescriptor ->
+                        contentResolver.openFileDescriptor(it, "r").use { parcelFileDescriptorNullable ->
+                            parcelFileDescriptorNullable?.let { parcelFileDescriptor ->
                                 val fileDescriptor = parcelFileDescriptor.fileDescriptor
                                 bitmapOrigin = BitmapFactory.decodeFileDescriptor(fileDescriptor)
                                 contentResolver.openInputStream(it).use {
@@ -53,7 +51,7 @@ class MainActivity : AppCompatActivity() {
                                         val orientation = exifInterface.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_UNDEFINED)
                                         val degrees = when (orientation) {
                                             1 -> { 0f }
-                                            3-> { 180f }
+                                            3 -> { 180f }
                                             6 -> { 90f }
                                             8 -> { 270f }
                                             else -> { 0f }
@@ -69,7 +67,6 @@ class MainActivity : AppCompatActivity() {
                             }
                         }
                     }
-
 
                     bitmap?.let {
                         image.setImageBitmap(it)

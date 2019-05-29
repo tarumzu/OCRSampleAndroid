@@ -10,13 +10,13 @@ plugins {
 
 android {
     compileSdkVersion(28)
-    defaultConfig{
+    defaultConfig {
         applicationId = "jp.sample.ocrsampleandroid"
         minSdkVersion(21)
         targetSdkVersion(28)
         versionCode = 1
         versionName = "1.0"
-        testInstrumentationRunner="android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         getByName("debug") {
@@ -39,7 +39,7 @@ ktlint {
     enableExperimentalRules.set(true)
 }
 
-val kotlinVersion:String by project
+val kotlinVersion: String by project
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to arrayOf("*.jar"))))
@@ -52,7 +52,6 @@ dependencies {
 
     implementation("com.rmtheis:tess-two:9.0.0")
     implementation("androidx.exifinterface:exifinterface:1.0.0")
-
 
     testImplementation("junit:junit:4.12")
     androidTestImplementation("com.android.support.test:runner:1.0.2")

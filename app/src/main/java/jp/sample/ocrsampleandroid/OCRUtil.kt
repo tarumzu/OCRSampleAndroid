@@ -39,8 +39,8 @@ class OCRUtil(context: Context) {
             TESS_TRAINED_DATA.forEach {
                 val filePath = context.filesDir.toString() + File.separator + TESS_DATA_DIR + it
 
-                context.assets.open(TESS_DATA_DIR + it).use {inputStream ->
-                    FileOutputStream(filePath).use {outStream ->
+                context.assets.open(TESS_DATA_DIR + it).use { inputStream ->
+                    FileOutputStream(filePath).use { outStream ->
                         val buffer = ByteArray(1024)
                         var read = inputStream.read(buffer)
                         while (read != -1) {
@@ -77,7 +77,6 @@ class OCRUtil(context: Context) {
             jpnnew("jpnnew"),
             eng("eng"),
             UNKNOWN("eng");
-
 
             companion object {
 
