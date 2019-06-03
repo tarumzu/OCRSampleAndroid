@@ -33,10 +33,8 @@ android {
 ktlint {
     version.set("0.31.0")
     android.set(true)
-    outputToConsole.set(true)
-    reporters.set(setOf(ReporterType.PLAIN, ReporterType.CHECKSTYLE))
+    reporters.set(setOf(ReporterType.CHECKSTYLE))
     ignoreFailures.set(true)
-    enableExperimentalRules.set(true)
 }
 
 val kotlinVersion: String by project
