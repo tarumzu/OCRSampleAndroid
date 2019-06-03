@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
                 var bitmap: Bitmap? = null
 
                 val uri = data.data
+                val uri2 = data.data
                 try {
                     uri?.let {
                         contentResolver.openFileDescriptor(it, "r").use { parcelFileDescriptorNullable ->
