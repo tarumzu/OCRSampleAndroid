@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/OCRSampleAndroid.iml" filepath="$PROJECT_DIR$/OCRSampleAndroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/OCRSampleAndroid-app.iml" filepath="$PROJECT_DIR$/app/OCRSampleAndroid-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/buildSrc/buildSrc.iml" filepath="$PROJECT_DIR$/buildSrc/buildSrc.iml" />
     </modules>
   </component>
 </project>
