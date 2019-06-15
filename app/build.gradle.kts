@@ -6,14 +6,12 @@ plugins {
     id("kotlin-android-extensions")
     id("org.jlleitschuh.gradle.ktlint")
     id("com.google.gms.google-services")
+    `android-application`
 }
 
 android {
-    compileSdkVersion(28)
     defaultConfig {
         applicationId = "jp.sample.ocrsampleandroid"
-        minSdkVersion(21)
-        targetSdkVersion(28)
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
@@ -41,11 +39,12 @@ val kotlinVersion: String by project
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to arrayOf("*.jar"))))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion")
+    implementation(Deps.Kotlin.stdlibJdk)
 
-    implementation("androidx.appcompat:appcompat:1.0.2")
-    implementation("androidx.core:core-ktx:1.0.2")
-    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
+    implementation(Deps.AndroidX.coreKTX)
+    implementation(Deps.AndroidX.appCompat)
+    implementation(Deps.AndroidX.constraintLayout)
+
     implementation("com.google.android.material:material:1.0.0")
 
     implementation("com.rmtheis:tess-two:9.0.0")
