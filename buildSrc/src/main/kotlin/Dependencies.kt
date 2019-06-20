@@ -7,7 +7,7 @@ object Versions {
     const val androidGradle = "3.5.0-beta04"
 
     // kotlin
-    const val kotlinVersion = "1.3.31"
+    const val kotlinVersion = "1.3.40"
 
     // Google libraries
     const val appCompat = "1.0.2"
