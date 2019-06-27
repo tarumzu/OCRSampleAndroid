@@ -4,7 +4,7 @@ object Versions {
     const val buildTools = "28.0.3"
     const val minSDK = 21
     const val targetSDK = 28
-    const val androidGradle = "3.5.0-beta04"
+    const val androidGradle = "3.5.0-beta05"
 
     // kotlin
     const val kotlinVersion = "1.3.40"
