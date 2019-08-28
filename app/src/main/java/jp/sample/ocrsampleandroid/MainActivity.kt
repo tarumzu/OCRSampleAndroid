@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
                 val uri = data.data
                 val uri2 = data.data
-                val uri3aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa = data.data
+                val uri3aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa = data.data
                 try {
                     uri?.let {
                         contentResolver.openFileDescriptor(it, "r").use { parcelFileDescriptorNullable ->
