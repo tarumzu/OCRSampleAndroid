@@ -17,7 +17,7 @@ jobs:
         with:
           ruby-version: '2.6'
           architecture: 'x64'
-        run: |
+      - run: |
           gem install bundler
           bundle install
       - name: start danger
