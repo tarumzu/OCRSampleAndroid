@@ -22,5 +22,6 @@ jobs:
       - run: |
           gem install bundler
           bundle install
+          echo 'aaaaaaaaaaaaaaaaaaaaaaa'
           echo $GITHUB_TOKEN
           danger
