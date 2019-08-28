@@ -13,13 +13,16 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Setup ruby
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         uses: actions/setup-ruby@v1
         with:
           ruby-version: '2.6'
           architecture: 'x64'
-      - run: |
+      - name: install danger
+        run: |
           gem install bundler
           bundle install
+      - name: run danger
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
           danger
