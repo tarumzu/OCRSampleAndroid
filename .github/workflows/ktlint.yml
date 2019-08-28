@@ -17,13 +17,13 @@ jobs:
         with:
           ruby-version: '2.6'
           architecture: 'x64'
-      - run: |
+        run: |
           gem install bundler
           bundle install
       - name: start danger
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: |
+        run: |
           echo 'aaaaaaaaaaaaaaaaaaaaaaa'
           echo $GITHUB_TOKEN
           danger
