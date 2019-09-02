@@ -22,7 +22,7 @@ jobs:
           gem install bundler
           bundle install
       - name: run ktlintCheck
-        uses: actions/android-gradle-action@master
+        uses: Raul6469/android-gradle-action@master
         with:
           args: ktlintCheck
       - name: run danger
