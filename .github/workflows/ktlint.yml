@@ -23,6 +23,8 @@ jobs:
           bundle install
       - name: run ktlintCheck
         uses: Raul6469/android-gradle-action@master
+        env:
+          ANDROID_LICENCE: ''
         with:
           args: ktlintCheck
       - name: run danger
