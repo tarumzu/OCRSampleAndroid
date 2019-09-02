@@ -22,7 +22,8 @@ jobs:
           gem install bundler
           bundle install
       - name: run ktlintCheck
-        run: ./gradlew ktlintCheck
+        uses: actions/android-gradle-action@master
+        args: ktlintCheck
       - name: run danger
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
